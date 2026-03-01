@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUXORA • Essence of Royalty</title>
+    <title>BYAF • Essence of Royalty</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&amp;family=Inter:wght@400&amp;family=Inter:wght@500&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&family=Inter:wght@400&family=Inter:wght@500&display=swap');
         
         :root {
             --gold: #d4af37;
@@ -911,7 +911,7 @@
         </div>
         
         <a href="#" class="logo serif">
-            LUXORA
+            BYAF
             <span class="logo-dot"></span>
         </a>
 
@@ -928,7 +928,7 @@
     <aside id="sidebar">
         <div class="sidebar-header">
             <div class="logo serif" style="font-size: 1.6rem; color: #d4af37;">
-                LUXORA
+                BYAF
             </div>
             <div id="sidebar-close" class="sidebar-close">✕</div>
         </div>
@@ -1009,7 +1009,7 @@
                     <button onclick="changeQty(1)" class="qty-btn">+</button>
                 </div>
                 
-                <div class="modal-price" id="modal-price">$245</div>
+                <div class="modal-price" id="modal-price">₹245</div>
                 
                 <div class="modal-actions">
                     <button onclick="addCurrentToCart()" class="btn-gold">ADD TO CART</button>
@@ -1033,7 +1033,7 @@
         <div class="cart-summary">
             <div class="summary-row">
                 <span>Subtotal</span>
-                <span id="cart-subtotal">$0</span>
+                <span id="cart-subtotal">₹0</span>
             </div>
             <div class="summary-row">
                 <span>Shipping</span>
@@ -1041,7 +1041,7 @@
             </div>
             <div class="summary-total">
                 <span>Total</span>
-                <span id="cart-total">$0</span>
+                <span id="cart-total">₹0</span>
             </div>
             
             <button onclick="proceedToCheckout()" 
@@ -1061,18 +1061,18 @@
             <div class="modal-body" style="padding-bottom: 2rem;">
                 <div class="form-group">
                     <label class="form-label">Full Name</label>
-                    <input id="checkout-name" type="text" class="form-input" placeholder="Ahmed Al-Khalifa" value="Alex Rivera">
+                    <input id="checkout-name" type="text" class="form-input" placeholder="Ahmed Al-Khalifa">
                 </div>
                 
                 <div class="form-group">
                     <label class="form-label">Phone Number</label>
-                    <input id="checkout-phone" type="tel" class="form-input" placeholder="+44 7000 000000" value="+447512345678">
+                    <input id="checkout-phone" type="tel" class="form-input" placeholder="+91 00000 00000">
                 </div>
                 
                 <div class="form-group">
                     <label class="form-label">Delivery Address</label>
                     <textarea id="checkout-address" class="form-input" rows="2" 
-                              style="resize: none;">42 Kensington High Street, London, W8 4DB, United Kingdom</textarea>
+                              style="resize: none;" placeholder="Enter your full delivery address"></textarea>
                 </div>
                 
                 <div>
@@ -1125,7 +1125,7 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <h3>LUXORA</h3>
+                <h3>BYAF</h3>
                 <p style="font-size: 0.85rem; color: #8c7a5c; max-width: 220px;">Crafting olfactory legacies since 2023. Each bottle tells a story of elegance and power.</p>
             </div>
             <div class="footer-col">
@@ -1157,7 +1157,7 @@
         </div>
         
         <div class="footer-bottom">
-            <div>© 2025 LUXORA. All rights reserved.</div>
+            <div>© 2025 BYAF. All rights reserved.</div>
             <div style="display: flex; gap: 20px; font-size: 1.1rem;">
                 <span style="cursor: pointer;">𝕏</span>
                 <span style="cursor: pointer;">📸</span>
@@ -1276,7 +1276,7 @@
         
         // Load cart from localStorage
         function loadCart() {
-            const savedCart = localStorage.getItem("luxoraCart")
+            const savedCart = localStorage.getItem("byafCart")
             if (savedCart) {
                 cart = JSON.parse(savedCart)
                 updateCartCount()
@@ -1285,13 +1285,13 @@
         
         // Save cart to localStorage
         function saveCart() {
-            localStorage.setItem("luxoraCart", JSON.stringify(cart))
+            localStorage.setItem("byafCart", JSON.stringify(cart))
         }
         
         // Create perfume bottle SVG
         function createBottleSVG(accentColor) {
             return `
-                <svg width="92" height="132" viewBox="0 0 92 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="perfume-svg" width="92" height="132" viewBox="0 0 92 132" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <!-- Bottle body -->
                     <path d="M26 38 Q26 72 26 95 Q26 110 46 110 Q66 110 66 95 Q66 72 66 38 Z" fill="${accentColor}" opacity="0.95"/>
                     <!-- Bottle neck -->
@@ -1321,7 +1321,7 @@
                             <div class="product-name">${perfume.name}</div>
                             <div class="product-desc">${perfume.desc}</div>
                             <div class="product-footer">
-                                <div class="product-price">$${perfume.basePrice}</div>
+                                <div class="product-price">₹${perfume.basePrice}</div>
                                 <div style="font-size: 0.7rem; background: rgba(212,175,55,0.15); color: #d4af37; padding: 2px 8px; border-radius: 9999px;">100ml</div>
                             </div>
                         </div>
@@ -1396,7 +1396,7 @@
                 price = Math.round(currentProduct.basePrice * 0.62)
             }
             
-            document.getElementById("modal-price").textContent = `$${price}`
+            document.getElementById("modal-price").textContent = `₹${price}`
         }
         
         function changeQty(delta) {
@@ -1467,8 +1467,8 @@
                         <p>Your cart is empty</p>
                     </div>
                 `
-                document.getElementById("cart-subtotal").textContent = "$0"
-                document.getElementById("cart-total").textContent = "$0"
+                document.getElementById("cart-subtotal").textContent = "₹0"
+                document.getElementById("cart-total").textContent = "₹0"
                 return
             }
             
@@ -1483,11 +1483,11 @@
                         <div style="width: 42px; height: 42px; background: #222; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🧴</div>
                         <div class="cart-item-info">
                             <div class="cart-item-name">${item.name}</div>
-                            <div class="cart-item-meta">${item.size} • $${item.price}</div>
+                            <div class="cart-item-meta">${item.size} • ₹${item.price}</div>
                         </div>
                         <div style="text-align: right;">
                             <div style="font-size: 0.8rem; color: #777;">×${item.qty}</div>
-                            <div class="cart-item-total">$${itemTotal}</div>
+                            <div class="cart-item-total">₹${itemTotal}</div>
                             <button onclick="removeFromCart(${index}); event.stopImmediatePropagation()" 
                                     style="margin-top: 8px; font-size: 0.7rem; background: none; border: 1px solid #444; color: #777; padding: 2px 8px; border-radius: 4px; cursor: pointer;">Remove</button>
                         </div>
@@ -1496,8 +1496,8 @@
                 container.innerHTML += itemHTML
             })
             
-            document.getElementById("cart-subtotal").textContent = `$${subtotal}`
-            document.getElementById("cart-total").textContent = `$${subtotal}`
+            document.getElementById("cart-subtotal").textContent = `₹${subtotal}`
+            document.getElementById("cart-total").textContent = `₹${subtotal}`
         }
         
         function removeFromCart(index) {
@@ -1551,7 +1551,7 @@
                 html += `
                     <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                         <span>${item.name} <span style="color:#777">(${item.size})</span></span>
-                        <span style="color:#d4af37">$${itemTotal}</span>
+                        <span style="color:#d4af37">₹${itemTotal}</span>
                     </div>
                 `
             })
@@ -1576,14 +1576,14 @@
         
         function placeOrder() {
             const name = document.getElementById("checkout-name").value.trim() || "Valued Customer"
-            const phone = document.getElementById("checkout-phone").value.trim() || "+447000000000"
+            const phone = document.getElementById("checkout-phone").value.trim() || "Not provided"
             const address = document.getElementById("checkout-address").value.trim() || "Not provided"
             
             if (cart.length === 0) return
             
             const orderId = document.getElementById("generated-order-id").textContent
             
-            let message = `🪔 *New LUXORA Order* 🪔\n\n`
+            let message = `🪔 *New BYAF Order* 🪔\n\n`
             message += `*Order ID:* ${orderId}\n`
             message += `*Customer:* ${name}\n`
             message += `*Phone:* ${phone}\n`
@@ -1595,15 +1595,15 @@
             cart.forEach(item => {
                 const itemTotal = item.price * item.qty
                 grandTotal += itemTotal
-                message += `• ${item.name} (${item.size}) × ${item.qty} = $${itemTotal}\n`
+                message += `• ${item.name} (${item.size}) × ${item.qty} = ₹${itemTotal}\n`
             })
             
-            message += `\n*Total:* $${grandTotal}\n`
+            message += `\n*Total:* ₹${grandTotal}\n`
             message += `*Payment:* ${selectedPayment}\n\n`
-            message += `Thank you for choosing LUXORA ✨`
+            message += `Thank you for choosing BYAF ✨`
             
             const encodedMessage = encodeURIComponent(message)
-            const whatsappURL = `https://wa.me/447000000000?text=${encodedMessage}`
+            const whatsappURL = `https://wa.me/917010463020?text=${encodedMessage}`
             
             // Show toast
             showToast("Opening WhatsApp with invoice...", 2200)
@@ -1773,8 +1773,7 @@
             initSearch()
             initKeyboard()
             
-            // Make sure modals are hidden
-            console.log('%c✅ LUXORA luxury perfume store ready. Inspired by cinematic elegance.', 'color:#d4af37; font-family:monospace')
+            console.log('%c✅ BYAF luxury perfume store ready. Inspired by cinematic elegance.', 'color:#d4af37; font-family:monospace')
         }
         
         // Boot the app
